@@ -151,15 +151,15 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Kamu memilih " + git.getName(), Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, DetailActivity.class);
 
-        //ini problemnya
-        git.setPhoto(dataPhoto.getResourceId(i, -1));
-        git.setName(dataName[i]);
-        git.setUsername(dataUsername[i]);
-        git.setLocation(dataLocation[i]);
-        git.setRepository(dataRepository[i]);
-        git.setCompany(dataCompany[i]);
-        git.setFollowers(dataFollowers[i]);
-        git.setFollowing(dataFollowing[i]);
+        //ini problemnya git.setPhoto(dataPhoto.getResourceId(i, -1)); saya ganti jadi ini bias git.setPhoto(git.getPhoto());
+        git.setPhoto(git.getPhoto());
+        git.setName(git.getName());
+        git.setUsername(git.getUsername());
+        git.setLocation(git.getLocation());
+        git.setRepository(git.getRepository());
+        git.setCompany(git.getCompany());
+        git.setFollowers(git.getFollowers());
+        git.setFollowing(git.getFollowing());
         intent.putExtra(DetailActivity.EXTRA_GIT, git);
         startActivity(intent);
     }
